@@ -1,4 +1,5 @@
-﻿using System;
+﻿using myTrack.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,17 @@ using System.Threading.Tasks;
 
 namespace myTrack.Controllers.Contracts
 {
-    interface ICategoryRepository
+    public interface ICategoryRepository
     {
-        void AddCategory(string Title, string Description);
+        Category GetSingleCategory(int CatId);
+
+        IEnumerable<Category> GetAllCategories();
+
+        void AddCategory(Category newCategory);
+
+        void EditCategory(Category editCategory);
+
+        bool DeleteCategory(int deleteCatId);
+        
     }
 }
