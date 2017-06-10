@@ -13,7 +13,8 @@ namespace myTrack.Models
         public int CatId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public List<Subcategory> SubCategories { get; set; }
+        public List<Subcategory> Subcategories { get; set; }
+        public ApplicationUser User { get; set; }
 
     }
 }
