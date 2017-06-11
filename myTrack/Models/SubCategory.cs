@@ -6,12 +6,14 @@ using System.Web;
 
 namespace myTrack.Models
 {
-    public class SubCategory
+    public class Subcategory
     {
+
         [Key]
-        public int SubCatId { get; set; }
+        public int SubcatId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public List<Item> Items { get; set; }
+
     }
 }
