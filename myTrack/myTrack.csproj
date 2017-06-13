@@ -242,10 +242,6 @@
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\SubcategoryController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="DAL\myTrackContext.cs" />
-    <Compile Include="DAL\Repository\CategoryRepository.cs" />
-    <Compile Include="DAL\Repository\ItemRepository.cs" />
-    <Compile Include="DAL\Repository\SubcategoryRepository.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />

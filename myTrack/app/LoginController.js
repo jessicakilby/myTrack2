@@ -21,12 +21,12 @@
             .then(function (result) {
                 console.log("login controller result", result);
 
-                sessionStorage.setItem("token", result.data.access_token);
+                sessionStorage.setItem('token', result.data.access_token);
 
-                $http.defaults.headers.common["Authorization"]`bearer ${result.data.access_token}`;
+                $http.defaults.headers.common['Authorization'] = `bearer ${result.data.access_token}`;
 
                 $location.path("/home");
-            })
+            });
         }
     }
 ]);
