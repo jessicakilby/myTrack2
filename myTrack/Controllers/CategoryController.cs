@@ -70,12 +70,20 @@ namespace myTrack.Controllers
             }
 
             editCategory.CatId = newCatId;
-            _categoryRepository.
+            _categoryRepository.EditCategory(editCategory);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         //bool DeleteCategory(int deleteCatId);
+        [HttpDelete]
+        [Route("api/product/{deleteCategory}")]
+        public HttpResponseMessage DeleteCategory(int deleteCategory)
+        {
+            _categoryRepository.DeleteCategory(deleteCategory);
+
+            return Request.CreateResponse(HttpStatusCode.OK); 
+        }
 
     }
 }
