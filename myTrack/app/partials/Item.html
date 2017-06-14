@@ -1,13 +1,13 @@
 ﻿<div>
-    <h3>Home</h3>
     <input type="button" class="btn-default" value="LOGOUT" ng-click="Logout()" /><br />
 </div>
 
 <div>
-    <input type="button" class="btn-default" value="addCategory" ng-click="addCategory()" />
-    <div ng-repeat="category in categories">
+    <input type="button" class="btn-default" value="addItem" ng-click="addItem()" />
+    <div ng-repeat="item in items">
         <h4>Categories</h4>
         <div>{{category.title}}</div>
         <div>{{category.description}}</div>
     </div>
+
 </div>

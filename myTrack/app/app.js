@@ -21,6 +21,22 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "app/Partials/Login.html",
             controller: "LoginController"
         });
+        //.when("/subcategory",
+        //{
+        //    templateUrl: "app/Partials/Subcategory.html",
+        //    controller: "SubcategoryController"
+        //})
+        //.when("/item",
+        //{
+        //    templateUrl: "app/Partials/Item.html",
+        //    controller: "ItemController"
+        //});
+        //.when("/login",
+        //{
+        //    templateUrl: "app/Partials/Login.html",
+        //    controller: "LoginController"
+        //});
+
 }]);
 
 app.run(["$http", function ($http) {
