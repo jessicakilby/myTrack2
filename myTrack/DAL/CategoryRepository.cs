@@ -32,16 +32,18 @@ namespace myTrack.DAL.Repository
         public void EditCategory(Category editCategory)
         {
             throw new NotImplementedException();
+            //var findId = _context.Categories.Find(editCategory);
+            //_context.Categories.
         }
 
         public IEnumerable<Category> GetAllCategories()
         {
-            throw new NotImplementedException();
+            return _context.Categories;
         }
 
         public Category GetSingleCategory(int CatId)
         {
-            throw new NotImplementedException();
+            return _context.Categories.Find(CatId);
         }
     }
 }
