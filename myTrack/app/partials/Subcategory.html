@@ -1,0 +1,12 @@
+﻿<div>
+    <input type="button" class="btn-default" value="LOGOUT" ng-click="Logout()" /><br />
+</div>
+
+<div>
+    <input type="button" class="btn-default" value="addSubcategory" ng-click="addSubcategory()" />
+    <div ng-repeat="subcategory in subcategories">
+        <h4>Subcategories</h4>
+        <div>{{subcategory.title}}</div>
+        <div>{{subcategory.description}}</div>
+    </div>
+</div>
