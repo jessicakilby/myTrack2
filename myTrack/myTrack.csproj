@@ -233,6 +233,7 @@
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="App_Start\StructuremapWebApi.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="DAL\CategoryRepository.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\Contracts\ICategoryRepository.cs" />
@@ -251,9 +252,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ItemRepository.cs" />
     <Compile Include="Migrations\201706070010089_myTrackAuth.cs" />
     <Compile Include="Migrations\201706070010089_myTrackAuth.Designer.cs">
       <DependentUpon>201706070010089_myTrackAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706140142465_myTrackTables.cs" />
+    <Compile Include="Migrations\201706140142465_myTrackTables.Designer.cs">
+      <DependentUpon>201706140142465_myTrackTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -266,6 +272,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="DAL\SubcategoryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
@@ -332,6 +339,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706070010089_myTrackAuth.resx">
       <DependentUpon>201706070010089_myTrackAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706140142465_myTrackTables.resx">
+      <DependentUpon>201706140142465_myTrackTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

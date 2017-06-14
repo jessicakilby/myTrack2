@@ -9,14 +9,24 @@ namespace myTrack.DAL.Repository
 {
     public class CategoryRepository : ICategoryRepository
     {
-        public void AddCategory(Category newCategory)
+        readonly ApplicationDbContext _context;
+
+        public CategoryRepository(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public bool DeleteCategory(int deleteCatId)
+        public void AddCategory(Category newCategory)
         {
-            throw new NotImplementedException();
+            _context.Categories.Add(newCategory);
+            _context.SaveChanges();
+        }
+
+        public void DeleteCategory(int deleteCatId)
+        {
+            var findId = _context.Categories.Find(deleteCatId);
+            _context.Categories.Remove(findId);
+            _context.SaveChanges();
         }
 
         public void EditCategory(Category editCategory)

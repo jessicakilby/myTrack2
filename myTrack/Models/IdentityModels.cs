@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace myTrack.Models
 {
@@ -24,7 +25,11 @@ namespace myTrack.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Subcategory> Subcategories { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
