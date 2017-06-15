@@ -4,10 +4,36 @@
 </div>
 
 <div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
     <input type="button" class="btn-default" value="addCategory" ng-click="addCategory()" />
     <div ng-repeat="category in categories">
         <h4>Categories</h4>
         <div>{{category.title}}</div>
         <div>{{category.description}}</div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Category</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" value="categoryTitle" ng-model="categoryTitle" />
+                <input type="text" value="categoryDescription" ng-model="categoryDescription" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
