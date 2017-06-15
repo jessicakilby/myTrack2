@@ -277,6 +277,7 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\HomeController.js" />
+    <Content Include="app\ItemController.js" />
     <Content Include="app\LoginController.js" />
     <Content Include="app\partials\Home.html" />
     <Content Include="app\partials\Item.html" />
@@ -284,6 +285,7 @@
     <Content Include="app\partials\SignUp.html" />
     <Content Include="app\partials\Subcategory.html" />
     <Content Include="app\SignUpController.js" />
+    <Content Include="app\SubcategoryController.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
