@@ -1,7 +1,7 @@
-﻿app.controller("CategoryController", ["$scope", "$http", "$location",
-    function ($scope, $http, $location) {
+﻿app.controller("CategoryController", ["$scope", "$http", "$routeParams",
+    function ($scope, $http, $routeParams) {
 
-
+        debugger
         
 
     }

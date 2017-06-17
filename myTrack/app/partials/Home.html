@@ -13,7 +13,7 @@
     <dl>
         <span ng-repeat="category in categories">
             <dt>
-                {{category.Title}}
+                <a href="/#!/category/{{category.CatId}}" >{{category.Title}}</a>
             </dt>
             <dd>{{category.Description}}</dd>
         </span>
