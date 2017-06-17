@@ -17,6 +17,6 @@ namespace myTrack.Controllers.Contracts
 
         void EditSubcategory(Subcategory editSubcategory);
 
-        bool DeleteSubcategory(int deleteSubcatId);
+        void DeleteSubcategory(int deleteSubcatId);
     }
 }

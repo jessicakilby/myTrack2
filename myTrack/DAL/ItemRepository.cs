@@ -14,7 +14,7 @@ namespace myTrack.DAL.Repository
             throw new NotImplementedException();
         }
 
-        public bool DeleteItem(int deleteItemId)
+        public void DeleteItem(int deleteItemId)
         {
             throw new NotImplementedException();
         }

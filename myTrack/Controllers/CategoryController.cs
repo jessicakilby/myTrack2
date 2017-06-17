@@ -61,7 +61,7 @@ namespace myTrack.Controllers
 
         //void EditCategory(Category editCategory);
         [HttpPut]
-        [Route("api/category/{productId}")]
+        [Route("api/category/{CatId}")]
         public HttpResponseMessage EditCategory([FromBody] Category editCategory, int newCatId)
         {
             if (string.IsNullOrWhiteSpace(editCategory.Title))
@@ -77,7 +77,7 @@ namespace myTrack.Controllers
 
         //bool DeleteCategory(int deleteCatId);
         [HttpDelete]
-        [Route("api/product/{deleteCategory}")]
+        [Route("api/category/{deleteCategory}")]
         public HttpResponseMessage DeleteCategory(int deleteCategory)
         {
             _categoryRepository.DeleteCategory(deleteCategory);

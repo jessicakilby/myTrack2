@@ -17,6 +17,6 @@ namespace myTrack.Controllers.Contracts
 
         void EditItem(Item editItem);
 
-        bool DeleteItem(int deleteItemId);
+        void DeleteItem(int deleteItemId);
     }
 }

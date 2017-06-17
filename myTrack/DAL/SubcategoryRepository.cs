@@ -9,29 +9,41 @@ namespace myTrack.DAL.Repository
 {
     public class SubcategoryRepository : ISubcategoryRepository
     {
-        public void AddSubcategory(Subcategory newSubcategory)
+        readonly ApplicationDbContext _context;
+
+        public SubcategoryRepository(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public bool DeleteSubcategory(int deleteSubcatId)
+        public void AddSubcategory(Subcategory newSubcategory)
         {
-            throw new NotImplementedException();
+            _context.Subcategories.Add(newSubcategory);
+            _context.SaveChanges();
+        }
+
+        public void DeleteSubcategory(int deleteSubcatId)
+        {
+            var findId = _context.Subcategories.Find(deleteSubcatId);
+            _context.Subcategories.Remove(findId);
+            _context.SaveChanges();
         }
 
         public void EditSubcategory(Subcategory editSubcategory)
         {
             throw new NotImplementedException();
+            //var findId = _context.Subcategories.Find(editSubcategory);
+            //_context.Subcategories.
         }
 
         public IEnumerable<Subcategory> GetAllSubcategories()
         {
-            throw new NotImplementedException();
+            return _context.Subcategories;
         }
 
         public Subcategory GetSingleSubcategory(int SubcatId)
         {
-            throw new NotImplementedException();
+            return _context.Subcategories.Find(SubcatId);
         }
     }
 }
