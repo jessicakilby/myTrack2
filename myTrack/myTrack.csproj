@@ -276,9 +276,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\CategoryController.js" />
     <Content Include="app\HomeController.js" />
     <Content Include="app\ItemController.js" />
     <Content Include="app\LoginController.js" />
+    <Content Include="app\partials\Category.html" />
     <Content Include="app\partials\Home.html" />
     <Content Include="app\partials\Item.html" />
     <Content Include="app\partials\Login.html" />

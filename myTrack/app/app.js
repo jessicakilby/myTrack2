@@ -21,21 +21,21 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "app/Partials/Login.html",
             controller: "LoginController"
         })
-        .when("/subcategory",
+        .when("/category/:id",
+        {
+            templateUrl: "app/Partials/Category.html",
+            controller: "CategoryController"
+        })
+        .when("/subcategory/:id",
         {
             templateUrl: "app/Partials/Subcategory.html",
             controller: "SubcategoryController"
         })
-        .when("/item",
+        .when("/item/:id",
         {
             templateUrl: "app/Partials/Item.html",
             controller: "ItemController"
         });
-        //.when("/login",
-        //{
-        //    templateUrl: "app/Partials/Login.html",
-        //    controller: "LoginController"
-        //});
 
 }]);
 

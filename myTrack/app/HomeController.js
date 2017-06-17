@@ -12,25 +12,21 @@
         $scope.addCategory = function () {
             console.log("clicked add category button");
 
-            $scope.categoryTitle = "";
-            $scope.categoryDescription = "";
-
-            
-        };
-
-        $scope.postAddCategory = function () {
-            console.log("clicked post add category after modal popup");
-
-            $http({
-                method: 'POST',
-                url: "",
-                headers: {},
-                data: {
-                    title: $scope.categoryTitle,
-                    Description : $scope.categoryDescription
-                }
+            $http.post("api/category/", {
+                Title: $scope.categoryTitle,
+                Description: $scope.categoryDescription
+            }).then(function (response) {
+                $scope.categoryTitle = "";
+                $scope.categoryDescription = "";
+            }, function (error) {
+                debugger
             })
 
-        }
+        };
+
+        $http.get("api/category").then(function (response) {
+            $scope.categories = response.data;
+        })
+
     }
 ]);
