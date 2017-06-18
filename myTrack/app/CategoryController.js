@@ -16,7 +16,8 @@
             })
         };
 
-        $http.get("api/subcategory").then(function (resonse) {
+        $http.get("api/subcategory").then(function (response) {
+            console.log(response.data);
             $scope.subcategory = response.data;
         });
         
