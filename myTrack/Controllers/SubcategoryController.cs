@@ -46,7 +46,8 @@ namespace myTrack.Controllers
 
         //void AddSubcategory(Subcategory newSubcategory);
         [HttpPost]
-        [Route("api/subcategory/")]
+        //[Route("api/subcategory/")]
+        [Route("api/subcategory/{CatId}")]
         public HttpResponseMessage AddSubcategory(Subcategory newSubcategory)
         {
             if (string.IsNullOrWhiteSpace(newSubcategory.Title))

@@ -4,7 +4,7 @@
         $scope.addSubcategory = function () {
             console.log("clicked add subcategory controller");
 
-            $http.post("api/subcategory/", {
+            $http.post("api/subcategory/{CatId}", {
                 Title: $scope.subcategoryTitle,
                 Description: $scope.subcategoryDescription,
                 CatId: $scope.CatId
@@ -13,7 +13,7 @@
                 $scope.subcategoryDescription = "";
             }, function (error) {
                 debugger
-            })
+            });
         };
 
         $http.get("api/subcategory").then(function (response) {
