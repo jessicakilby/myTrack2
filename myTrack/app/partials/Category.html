@@ -1,1 +1,22 @@
-﻿
+﻿<div>
+    <input type="button" class="btn-default" value="LOGOUT" ng-click="Logout()" /><br />
+</div>
+<div>
+    <input type="text" value="subcategoryTitle" ng-model="subcategoryTitle" />
+    <input type="text" value="subcategoryDescription" ng-model="subcategoryDescription" />
+</div>
+
+
+<div>
+    <input type="button" class="btn-default" value="addSubcategory" ng-click="addSubcategory()" />
+
+    <h4>Subcategories</h4>
+    <div>
+        <span ng-repeat="subcategory in subcategories">
+            <dt>
+                <a href="/#!/subcategory/{{subcat}}">{{subcategory.Title}}</a>
+            </dt>
+            <dd>{{subcategory.Description}}</dd>
+        </span>
+    </div>
+</div>
