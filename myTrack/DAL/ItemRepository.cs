@@ -9,14 +9,24 @@ namespace myTrack.DAL.Repository
 {
     public class ItemRepository : IItemRepository
     {
+        readonly ApplicationDbContext _context;
+
+        public ItemRepository(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         public void AddItem(Item newItem)
         {
-            throw new NotImplementedException();
+            _context.Items.Add(newItem);
+            _context.SaveChanges();
         }
 
         public void DeleteItem(int deleteItemId)
         {
-            throw new NotImplementedException();
+            var findId = _context.Items.Find(deleteItemId);
+            _context.Items.Remove(findId);
+            _context.SaveChanges();
         }
 
         public void EditItem(Item editItem)
@@ -26,12 +36,12 @@ namespace myTrack.DAL.Repository
 
         public IEnumerable<Item> GetAllItems()
         {
-            throw new NotImplementedException();
+            return _context.Items;
         }
 
         public Item GetSingleItem(int ItemId)
         {
-            throw new NotImplementedException();
+            return _context.Items.Find(ItemId);
         }
     }
 }
