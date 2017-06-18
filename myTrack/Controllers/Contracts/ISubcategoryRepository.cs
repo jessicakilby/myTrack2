@@ -13,7 +13,7 @@ namespace myTrack.Controllers.Contracts
 
         IEnumerable<Subcategory> GetAllSubcategories();
 
-        void AddSubcategory(Subcategory newSubcategory);
+        void AddSubcategory(int CatId, Subcategory newSubcategory);
 
         void EditSubcategory(Subcategory editSubcategory);
 

@@ -16,8 +16,9 @@ namespace myTrack.DAL.Repository
             _context = context;
         }
 
-        public void AddSubcategory(Subcategory newSubcategory)
+        public void AddSubcategory(int CatId, Subcategory newSubcategory)
         {
+            var catId = _context.Categories.Find(CatId);
             _context.Subcategories.Add(newSubcategory);
             _context.SaveChanges();
         }

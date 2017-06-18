@@ -12,12 +12,14 @@
         $scope.addCategory = function () {
             console.log("clicked add category button");
 
-            $http.post("api/category/", {
+            $http.post(`api/category/`, {
                 Title: $scope.categoryTitle,
-                Description: $scope.categoryDescription
+                Description: $scope.categoryDescription,
+                CatId: $scope.CatId
             }).then(function (response) {
                 $scope.categoryTitle = "";
                 $scope.categoryDescription = "";
+                $scope.CatId;
             }, function (error) {
                 debugger
             })
