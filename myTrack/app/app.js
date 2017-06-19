@@ -24,18 +24,18 @@ app.config(["$routeProvider", function ($routeProvider) {
         .when("/category/:id",
         {
             templateUrl: "app/Partials/Category.html",
-            controller: "CategoryController"
+            controller: "SubcategoryController"
         })
         .when("/subcategory/:id",
         {
             templateUrl: "app/Partials/Subcategory.html",
-            controller: "SubcategoryController"
-        })
-        .when("/item/:id",
-        {
-            templateUrl: "app/Partials/Item.html",
             controller: "ItemController"
         });
+        //.when("/item/:id",
+        //{
+        //    templateUrl: "app/Partials/Item.html",
+        //    controller: "ItemController"
+        //});
 
 }]);
 
