@@ -46,13 +46,12 @@ namespace myTrack.Controllers
 
         //void AddSubcategory(Subcategory newSubcategory);
         [HttpPost]
-        //[Route("api/subcategory/")]
         [Route("api/subcategory/{CatId}")]
-        public HttpResponseMessage AddSubcategory(int CatId,Subcategory newSubcategory)
+        public HttpResponseMessage AddSubcategory(int CatId, Subcategory newSubcategory)
         {
             if (string.IsNullOrWhiteSpace(newSubcategory.Title))
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid Category name.");
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid subcategory name.");
             }
 
             _subcategoryRepository.AddSubcategory(CatId, newSubcategory);
@@ -67,7 +66,7 @@ namespace myTrack.Controllers
         {
             if (string.IsNullOrWhiteSpace(editSubcategory.Title))
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid Title.");
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid subcategory Title.");
             }
 
             editSubcategory.SubcatId = newSubcatId;

@@ -6,6 +6,9 @@
     <h2>Add Items</h2>
     <input type="text" placeholder="itemTitle" ng-model="itemTitle" />
     <input type="text" placeholder="itemDescription" ng-model="itemDescription" />
+    <input type="text" placeholder="itemTitle" ng-model="itemTitle" />
+    <input type="text" placeholder="itemDescription" ng-model="itemDescription" />
+
     <input type="button" class="btn-default" value="addItem" ng-click="addItem()" />
 </div>
 
@@ -18,6 +21,8 @@
                 <a href="/#!/item/{{item.itemId}}">Title: {{item.Title}}</a>
             </dt>
             <dd>Description: {{item.Description}}</dd>
+            <dd>Frequency: {{item.Frequency}}</dd>
+            <dd>NextDate: {{item.NextDate}}</dd>
             <dd>SubcatId: {{item.SubcatId}}</dd>
             <dd>ItemId: {{item.ItemId}}</dd>
         </span>

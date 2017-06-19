@@ -18,8 +18,14 @@ namespace myTrack.DAL.Repository
 
         public void AddSubcategory(int CatId, Subcategory newSubcategory)
         {
-            var catId = _context.Categories.Find(CatId);
-            _context.Subcategories.Add(newSubcategory);
+            var currentCategory = _context.Categories.Find(CatId);
+
+            if (currentCategory.Subcategories == null)
+            {
+                currentCategory.Subcategories = new List<Subcategory>();
+            }
+
+            currentCategory.Subcategories.Add(newSubcategory);
             _context.SaveChanges();
         }
 
