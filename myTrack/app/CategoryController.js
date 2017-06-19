@@ -1,31 +1,28 @@
-﻿app.controller("CategoryController", ["$scope", "$http", "$routeParams",
-    function ($scope, $http, $routeParams) {
-
-        var CatId = $routeParams.CatId;
+﻿app.controller("CategoryController", ["$scope", "$http", "$location", "$routeParams",
+    function ($scope, $http, $location, $routeParams) {
 
         $scope.addSubcategory = function () {
-            console.log("clicked add subcategory controller");
+            console.log("clicked add Subcategory button");
 
-            $http.post(`api/subcategory/${CatId}`, {
+            $http.post(`api/subcategory`, {
                 Title: $scope.subcategoryTitle,
                 Description: $scope.subcategoryDescription,
-                Category_CatId: $scope.Category_CatId
+                SubcatId: $scope.SubcatId
             }).then(function (response) {
                 $scope.subcategoryTitle = "";
                 $scope.subcategoryDescription = "";
+                $scope.SubcatId;
             }, function (error) {
                 debugger
-            });
-
-            $http.get("api/subcategory").then(function (response) {
-                console.log(response.data);
-                $scope.subcategory = response.data;
-            });
+            })
 
         };
 
-        
-        
+        $http.get("api/subcategory").then(function (response) {
+            $scope.categories = response.data;
+        });
+
+
 
     }
 ]);

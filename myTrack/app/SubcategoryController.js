@@ -1,23 +1,23 @@
-﻿app.controller("SubcategoryController", ["$scope", "$http", "$location",
-    function ($scope, $http, $location) {
+﻿app.controller("SubcategoryController", ["$scope", "$http", "$routeParams",
+    function ($scope, $http, $routeParams) {
 
-        //$scope.addSubcategory = function () {
-        //    console.log("clicked add subcategory controller");
+        $scope.addItem = function () {
+            console.log("clicked add Item button");
 
-        //    $http.post("api/subcategory/", {
-        //        Title: $scope.subcategoryTitle,
-        //        Description: $scope.subcategoryDescription
-        //    }).then(function (response) {
-        //        $scope.subcategoryTitle = "";
-        //        $scope.subcategoryDescription = "";
-        //    }, function(error){
-        //        debugger
-        //    })
-        //};
+            $http.post("api/subcategory/", {
+                Title: $scope.itemTitle,
+                Description: $scope.itemDescription
+            }).then(function (response) {
+                $scope.itemTitle = "";
+                $scope.itemDescription = "";
+            }, function(error){
+                debugger
+            })
+        };
 
-        //$http.get("api/subcategory").then(function (resonse) {
-        //    $scope.subcategory = response.data;
-        //})
+        $http.get("api/subcategory").then(function (resonse) {
+            $scope.subcategory = response.data;
+        })
        
     }
 ]);

@@ -27,7 +27,7 @@
 
         $http.get("api/category").then(function (response) {
             $scope.categories = response.data;
-        })
+        });
 
     }
 ]);

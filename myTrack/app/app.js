@@ -6,11 +6,6 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "app/Partials/Login.html",
             controller: "LoginController"
         })
-        .when("/home",
-        {
-            templateUrl: "app/Partials/Home.html",
-            controller: "HomeController"
-        })
         .when("/signUp",
         {
             templateUrl: "app/Partials/SignUp.html",
@@ -21,15 +16,20 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "app/Partials/Login.html",
             controller: "LoginController"
         })
+        .when("/home",
+        {
+            templateUrl: "app/Partials/Home.html",
+            controller: "HomeController"
+        })
         .when("/category/:id",
         {
             templateUrl: "app/Partials/Category.html",
-            controller: "SubcategoryController"
+            controller: "CategoryController"
         })
         .when("/subcategory/:id",
         {
             templateUrl: "app/Partials/Subcategory.html",
-            controller: "ItemController"
+            controller: "SubcategoryController"
         });
         //.when("/item/:id",
         //{
