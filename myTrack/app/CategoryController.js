@@ -20,8 +20,8 @@
 
         };
 
-        $http.get("api/subcategory").then(function (response) {
-            $scope.categories = response.data;
+        $http.get(`api/subcategory`).then(function (response) {
+            $scope.subcategories = response.data;
         });
 
 

@@ -24,9 +24,9 @@
             })
         };
 
-        $http.get("api/item").then(function (resonse) {
+        $http.get(`api/item`).then(function (response) {
             $scope.items = response.data;
-        })
+        });
        
     }
 ]);
