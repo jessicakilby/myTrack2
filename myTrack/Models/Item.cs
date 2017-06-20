@@ -15,7 +15,7 @@ namespace myTrack.Models
         public bool Status { get; set; }
         public string Disciption { get; set; }
         public string Frequency { get; set; }
-        public DateTime NextDate { get; set; }
+        public DateTime? NextDate { get; set; }
 
     }
 }
