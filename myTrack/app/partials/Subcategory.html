@@ -1,22 +1,31 @@
 ﻿<div>
     <input type="button" class="btn-default" value="LOGOUT" ng-click="Logout()" /><br />
 </div>
+
 <div>
-    <input type="text" value="subcategoryTitle" ng-model="subcategoryTitle" />
-    <input type="text" value="subcategoryDescription" ng-model="subcategoryDescription" />
+    <h2>Add Items</h2>
+    <input type="text" placeholder="itemTitle" ng-model="itemTitle" />
+    <input type="text" placeholder="itemStatus" ng-model="itemStatus" />
+    <input type="text" placeholder="itemDescription" ng-model="itemDescription" />
+    <input type="text" placeholder="itemFrequency" ng-model="itemFrequency" />
+    <input type="text" placeholder="itemNextDate" ng-model="itemNextDate" />
+
+    <input type="button" class="btn-default" value="addItem" ng-click="addItem()" />
 </div>
 
 
 <div>
-    <input type="button" class="btn-default" value="addSubcategory" ng-click="addSubcategory()" />
-
-    <h4>Subcategories</h4>
-    <div> 
-        <span ng-repeat="subcategory in subcategories">
-              <dt>
-                  <a href="/#!/subcategory/{{subcat}}">{{subcategory.Title}}</a>
-              </dt>
-            <dd>{{subcategory.Description}}</dd>
+    <h2>Your Items</h2>
+    <div>
+        <span ng-repeat="item in items">
+            <dt>
+                <a href="/#!/item/{{item.itemId}}">Title: {{item.Title}}</a>
+            </dt>
+            <dd>Description: {{item.Description}}</dd>
+            <dd>Frequency: {{item.Frequency}}</dd>
+            <dd>NextDate: {{item.NextDate}}</dd>
+            <dd>SubcatId: {{item.SubcatId}}</dd>
+            <dd>ItemId: {{item.ItemId}}</dd>
         </span>
     </div>
 </div>

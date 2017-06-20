@@ -1,21 +1,23 @@
 ﻿<div>
-    <h3>Home</h3>
-    <input type="button" class="btn-default" value="LOGOUT" ng-click="Logout()" /><br />
+    <input type="button" class="btn-warning text-right" value="LOGOUT" ng-click="Logout()" /><br />
 </div>
 
-<input type="text" value="categoryTitle" ng-model="categoryTitle" />
-<input type="text" value="categoryDescription" ng-model="categoryDescription" />
+<div>
+    <h2>Add Categories</h2>
+    <input type="text" placeholder="categoryTitle" ng-model="categoryTitle" />
+    <input type="text" placeholder="categoryDescription" ng-model="categoryDescription" />
+    <input type="button" class="btn-default success" value="addCategory" ng-click="addCategory()" />
+</div>
 
 <div>
-    <input type="button" class="btn-default" value="addCategory" ng-click="addCategory()" />
-
-    <h4>Categories</h4>
+    <h2>Your Categories</h2>
     <dl>
         <span ng-repeat="category in categories">
             <dt>
-                <a href="/#!/category/{{category.CatId}}" >{{category.Title}}</a>
+                <a href="/#!/category/{{category.CatId}}" >Title: {{category.Title}}</a>
             </dt>
-            <dd>{{category.Description}}</dd>
+            <dd>Description: {{category.Description}}</dd>
+            <dd>CatId: {{category.CatId}}</dd>
         </span>
     </dl>
     

@@ -261,6 +261,10 @@
     <Compile Include="Migrations\201706140142465_myTrackTables.Designer.cs">
       <DependentUpon>201706140142465_myTrackTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706200054026_datetimeNull.cs" />
+    <Compile Include="Migrations\201706200054026_datetimeNull.Designer.cs">
+      <DependentUpon>201706200054026_datetimeNull.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -348,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706140142465_myTrackTables.resx">
       <DependentUpon>201706140142465_myTrackTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706200054026_datetimeNull.resx">
+      <DependentUpon>201706200054026_datetimeNull.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

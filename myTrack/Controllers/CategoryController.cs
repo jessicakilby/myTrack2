@@ -66,7 +66,7 @@ namespace myTrack.Controllers
         {
             if (string.IsNullOrWhiteSpace(editCategory.Title))
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid Title.");
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid category Title.");
             }
 
             editCategory.CatId = newCatId;

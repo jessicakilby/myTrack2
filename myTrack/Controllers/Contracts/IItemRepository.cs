@@ -13,7 +13,7 @@ namespace myTrack.Controllers.Contracts
 
         IEnumerable<Item> GetAllItems();
 
-        void AddItem(Item newItem);
+        void AddItem(int SubcatId, Item newItem);
 
         void EditItem(Item editItem);
 
