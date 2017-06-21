@@ -11,7 +11,7 @@ namespace myTrack.Controllers.Contracts
     {
         Category GetSingleCategory(int CatId);
 
-        IEnumerable<Category> GetAllCategories();
+        IEnumerable<Category> GetAllCategories(string userId);
 
         void AddCategory(Category newCategory);
 

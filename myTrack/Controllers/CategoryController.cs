@@ -39,7 +39,7 @@ namespace myTrack.Controllers
         [Route("api/category")]
         public HttpResponseMessage GetAllCategories()
         {
-            var categories = _categoryRepository.GetAllCategories();
+            var categories = _categoryRepository.GetAllCategories(User.Identity.GetUserId());
 
             if (categories == null)
                 return Request.CreateErrorResponse(HttpStatusCode.NoContent, "No Categories here");
