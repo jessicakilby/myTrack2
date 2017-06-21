@@ -1,24 +1,24 @@
 ﻿<div>
-    <input type="button" class="btn-default" value="LOGOUT" ng-click="Logout()" /><br />
+    <input type="button" class="btn-warning text-right" value="LOGOUT" ng-click="Logout()" /><br />
 </div>
 
-<div>
-    <h2>Add Subcategories</h2>
-    <input type="text" placeholder="subcategoryTitle" ng-model="subcategoryTitle" />
-    <input type="text" placeholder="subcategoryDescription" ng-model="subcategoryDescription" />
-    <input type="button" class="btn-default" value="addSubcategory" ng-click="addSubcategory()" />
-</div>
-
-
-<div>
-    <h2>Your Subcategories</h2>
-    <div>
-        <span ng-repeat="subcategory in subcategories">
-            <dt>
-                <a href="/#!/subcategory/{{subcategory.SubcatId}}">Title: {{subcategory.Title}}</a>
-            </dt>
-            <dd>Description: {{subcategory.Description}}</dd>
-            <dd>SubcatId: {{subcategory.SubcatId}}</dd>
-        </span>
+<h2>Your Subcategories</h2>
+<div class="card" ng-repeat="subcategory in subcategories">
+    <div class="container">
+        <a href="/#!/subcategory/{{subcategory.SubcatId}}"><div>{{subcategory.Title}}: {{subcategory.Description}}</div></a>
     </div>
 </div>
+
+<form>
+    <ul class="form-style-1">
+        <li><label>New Subcategory Title <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Title" ng-model="subcategoryTitle" />&nbsp;</li>
+
+        <li>
+            <label>New Subcategory Description</label>
+            <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Description" ng-model="subcategoryDescription"></textarea>
+        </li>
+        <li>
+            <input type="button" class="btn-default" value="Add Subcategory" ng-click="addSubcategory()" />
+        </li>
+    </ul>
+</form>

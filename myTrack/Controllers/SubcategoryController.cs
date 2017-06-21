@@ -17,31 +17,17 @@ namespace myTrack.Controllers
         {
             _subcategoryRepository = subcategoryRepository;
         }
-
-        //Subcategory GetSingleSubcategory(int SubcatId);
+        
         [HttpGet]
-        [Route("api/subcategory/{SubcatId}")]
-        public HttpResponseMessage GetSingleSubcategory(int SubcatId)
+        [Route("api/subcategory/{CatId}")]
+        public HttpResponseMessage GetAllSubcategories(int CatId)
         {
-            var subcategory = _subcategoryRepository.GetSingleSubcategory(SubcatId);
+            var subcategories = _subcategoryRepository.GetAllSubcategories(CatId);
 
-            if (subcategory == null)
+            if (subcategories == null)
                 return Request.CreateErrorResponse(HttpStatusCode.NoContent, "Subcategory doesn't exist");
 
-            return Request.CreateResponse(HttpStatusCode.OK, subcategory);
-        }
-
-        //IEnumerable<Subcategory> GetAllSubcategories();
-        [HttpGet]
-        [Route("api/subcategory")]
-        public HttpResponseMessage GetAllSubcategories()
-        {
-            var subcategory = _subcategoryRepository.GetAllSubcategories();
-
-            if (subcategory == null)
-                return Request.CreateErrorResponse(HttpStatusCode.NoContent, "No subcategory here");
-
-            return Request.CreateResponse(HttpStatusCode.OK, subcategory);
+            return Request.CreateResponse(HttpStatusCode.OK, subcategories);
         }
 
         //void AddSubcategory(Subcategory newSubcategory);

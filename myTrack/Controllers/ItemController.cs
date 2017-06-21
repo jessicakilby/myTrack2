@@ -18,27 +18,13 @@ namespace myTrack.Controllers
             _itemRepository = itemRepository;
         }
 
-        //Item GetSingleItem(int ItemId);
-        [HttpGet]
-        [Route("api/item/{ItemId}")]
-        public HttpResponseMessage GetSingleItem(int ItemId)
-        {
-            var item = _itemRepository.GetSingleItem(ItemId);
-
-            if (item == null)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.NoContent, "Item doesn't exist");
-            }
-
-            return Request.CreateResponse(HttpStatusCode.OK, item);
-        }
 
         //IEnumerable<Item> GetAllItems();
         [HttpGet]
-        [Route("api/item")]
-        public HttpResponseMessage GetAllItems()
+        [Route("api/item/{SubcatId}")]
+        public HttpResponseMessage GetAllItems(int SubcatId)
         {
-            var item = _itemRepository.GetAllItems();
+            var item = _itemRepository.GetAllItems(SubcatId);
 
             if (item == null)
             {

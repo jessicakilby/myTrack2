@@ -43,14 +43,12 @@ namespace myTrack.DAL.Repository
             //_context.Subcategories.
         }
 
-        public IEnumerable<Subcategory> GetAllSubcategories()
+        public IEnumerable<Subcategory> GetAllSubcategories(int CatId)
         {
-            return _context.Subcategories;
+            var currentCategory = _context.Categories.Include("Subcategories").FirstOrDefault(x => x.CatId == CatId);
+            return currentCategory?.Subcategories;
         }
 
-        public Subcategory GetSingleSubcategory(int SubcatId)
-        {
-            return _context.Subcategories.Find(SubcatId);
-        }
+        
     }
 }
