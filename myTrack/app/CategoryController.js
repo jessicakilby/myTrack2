@@ -21,14 +21,14 @@
 
         };
 
-        $scope.deleteSubcategory = function () {
-            console.log("clicked delete subcategory button");
+        //$scope.deleteSubcategory = function () {
+        //    console.log("clicked delete subcategory button");
 
-            $http.delete(`api/subcategory`).then(function () {
-                getFunction();
-            });
+        //    $http.delete(`api/subcategory`).then(function () {
+        //        getFunction();
+        //    });
             
-        };
+        //};
 
         var getFunction = function () {
             $http.get(`api/subcategory/${$scope.CatId}`).then(function (response) {
@@ -36,7 +36,6 @@
                 $scope.subcategories = response.data;
             });
         };
-
         getFunction();
     }
 ]);

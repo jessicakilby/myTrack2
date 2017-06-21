@@ -1,31 +1,37 @@
 ﻿<div>
-    <input type="button" class="btn-default" value="LOGOUT" ng-click="Logout()" /><br />
+    <input type="button" class="btn-warning text-right" value="LOGOUT" ng-click="Logout()" /><br />
 </div>
 
-<div>
-    <h2>Add Items</h2>
-    <input type="text" placeholder="itemTitle" ng-model="itemTitle" />
-    <input type="text" placeholder="itemStatus" ng-model="itemStatus" />
-    <input type="text" placeholder="itemDescription" ng-model="itemDescription" />
-    <input type="text" placeholder="itemFrequency" ng-model="itemFrequency" />
-    <input type="text" placeholder="itemNextDate" ng-model="itemNextDate" />
-
-    <input type="button" class="btn-default" value="addItem" ng-click="addItem()" />
-</div>
-
-
-<div>
-    <h2>Your Items</h2>
-    <div>
-        <span ng-repeat="item in items">
-            <dt>
-                <a href="/#!/item/{{item.itemId}}">Title: {{item.Title}}</a>
-            </dt>
-            <dd>Description: {{item.Description}}</dd>
-            <dd>Frequency: {{item.Frequency}}</dd>
-            <dd>NextDate: {{item.NextDate}}</dd>
-            <dd>SubcatId: {{item.SubcatId}}</dd>
-            <dd>ItemId: {{item.ItemId}}</dd>
-        </span>
+<h2>Your Items</h2>
+<div class="card" ng-repeat="item in items">
+    <div class="container">
+            <div>{{item.Title}}: {{item.Description}}</div>
+            <div>Frequency: {{item.Frequency}}  ||  Next Date: {{item.NextDate}}</div>
     </div>
 </div>
+
+<form>
+    <ul class="form-style-1">
+        <li><label>New Item Title <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Title" ng-model="itemTitle" />&nbsp;</li>
+
+        <li>
+            <label>New Item Description</label>
+            <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Description" ng-model="itemDescription"></textarea>
+        </li>
+        <li>
+            <input type="text" name="field1" class="field-divided" placeholder="Status" ng-model="itemStatus" />&nbsp;
+            <input type="text" name="field2" class="field-divided" placeholder="Frequency" ng-model="itemFrequency" />
+        </li>
+        <li>
+            <input type="button" class="btn-default" value="Add Subcategory" ng-click="addItem()" />
+        </li>
+    </ul>
+</form>
+
+<!--<input type="text" placeholder="itemStatus" ng-model="itemStatus" />
+<input type="text" placeholder="itemDescription" ng-model="itemDescription" />
+<input type="text" placeholder="itemFrequency" ng-model="itemFrequency" />
+<input type="text" placeholder="itemNextDate" ng-model="itemNextDate" />
+
+<input type="button" class="btn-default" value="addItem" ng-click="addItem()" />
+</div>-->

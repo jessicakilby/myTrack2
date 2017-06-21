@@ -13,7 +13,7 @@ namespace myTrack.Models
         public int ItemId { get; set; }
         public string Title { get; set; }
         public bool Status { get; set; }
-        public string Disciption { get; set; }
+        public string Description { get; set; }
         public string Frequency { get; set; }
         public DateTime? NextDate { get; set; }
 

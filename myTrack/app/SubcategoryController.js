@@ -29,6 +29,7 @@
             $http.get(`api/item/${$scope.SubcatId}`).then(function (response) {
                 $scope.items = response.data;
             });
-        }
+        };
+        getFunction();
     }
 ]);
