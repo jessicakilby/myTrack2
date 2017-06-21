@@ -1,19 +1,30 @@
 ﻿# MyTrack
 
 ## Description
-Have a hard time remembering those important things that don't come around very often? For example, chimney sweepers or heat and air maintenance? My back-end capstone, MyTrack, was built to help keep you organized. It uses HTML, CSS, AngularJS, C# and .net webAPI.
+Back end application that categorizes all the maintenance needs you may have. The information is stored in a database so that you can have access the information for your reference. Technologies: C# .Net web API, AngularJS, Bootstrap and Microsoft SQL server. 
+
+## Screenshots
+
+### Home View
+Enter all your main categories such as, Home, Car, Pets, etc...
+
+![ERD](/img/myTrack.jpg?raw=true)
 
 
-## How to run
-After you clone the files, navigate to the correct directory in your terminal.
-Then in your terminal run:
-```
-http-server -p 9898
-```
-Last, navigate [here](http://localhost:9898) in your browser.
+### Subcategory View
+Break down your main categories into areas of interest. For example for Home you could have subcategories of heat and air or water filtration systems.
+
+![ERD](/img/myTrack.jpg?raw=true)
+
+
+### Item view
+Shows individual reminders of things that are going to be coming up. It also is a repository for past instances of when you needed to do that task. For example an item for your home's heat and air filtration system can have notes about what brand and size filter you used as well as a repository of the last time you completed that task.
+
+![ERD](/img/myTrack.jpg?raw=true)
+
 
 ## Contributors
 - [Jessica Kilby](https://github.com/jessicakilby)
 
-## Images
-![ERD](/myTrack.jpg?raw=true)
+## Entity Relationship Diagram using Visual Paradigm
+![ERD](/img/myTrack.jpg?raw=true)
