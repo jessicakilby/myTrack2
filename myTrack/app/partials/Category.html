@@ -1,11 +1,11 @@
-﻿<div>
-    <input type="button" class="btn-warning text-right" value="LOGOUT" ng-click="Logout()" /><br />
-</div>
-
-<h2>Your Subcategories</h2>
+﻿<h2>Subcategory Groups</h2>
+<h4>How can you break down the main category you chose into further topics? What are some general things you need help remembering?</h4>
 <div class="card" ng-repeat="subcategory in subcategories">
     <div class="container">
-        <a href="/#!/subcategory/{{subcategory.SubcatId}}"><div>{{subcategory.Title}}: {{subcategory.Description}}</div></a>
+        <a href="/#!/subcategory/{{subcategory.SubcatId}}">
+            <h3>{{subcategory.Title}} </h3>
+            <h5>{{subcategory.Description}}</h5>
+        </a>
     </div>
 </div>
 
