@@ -4,14 +4,19 @@
 
 a:hover {
     text-decoration: none;
-    color: white;
+    color: black;
+    background-color: yellow;
+}
+
+a {
+    color: #104d84;
 }
 
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    height: 70px;
+    height: 90px;
     font-size: x-large;
 }
 
@@ -94,8 +99,9 @@ select{
 .form-style-1 .field-textarea{
     height: 100px;
 }
+
 .form-style-1 input[type=submit], .form-style-1 input[type=button]{
-    background: #4B99AD;
+    background: #4B99AD; 
     padding: 8px 15px 8px 15px;
     border: none;
     color: #fff;

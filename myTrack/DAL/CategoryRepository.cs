@@ -36,9 +36,10 @@ namespace myTrack.DAL.Repository
             //_context.Categories.
         }
 
-        public IEnumerable<Category> GetAllCategories()
+        public IEnumerable<Category> GetAllCategories(string userId)
         {
-            return _context.Categories;
+            var categories = _context.Categories.Include("User").ToList();
+            return categories.Where(x => x.User.Id == userId);
         }
 
         public Category GetSingleCategory(int CatId)

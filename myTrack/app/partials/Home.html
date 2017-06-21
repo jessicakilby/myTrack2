@@ -1,22 +1,18 @@
-﻿<div>
-    <input type="button" class="btn-warning text-right" value="LOGOUT" ng-click="Logout()" /><br />
-</div>
-
-<h2>Your Categories</h2>
+﻿<h2>Main Categories</h2>
+<h4>Enter some main categores that you need reminders for like Home, Car, Pet, etc...</h4>
 <div class="card" ng-repeat="category in categories">
     <div class="container">
-        <a href="/#!/category/{{category.CatId}}"><div>{{category.Title}}: {{category.Description}}</div></a>
+        <a href="/#!/category/{{category.CatId}}"><div>{{category.Title}}</div></a>
     </div>
 </div>
 
 <form>
     <ul class="form-style-1">
         <li><label>New Category Title <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Title" ng-model="categoryTitle" />&nbsp;</li>
-
-        <li>
+        <!--<li>
             <label>New Category Description</label>
             <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Description" ng-model="categoryDescription"></textarea>
-        </li>
+        </li>-->
         <li>
             <input type="button" class="btn-default" value="Add Category" ng-click="addCategory()" />
         </li>

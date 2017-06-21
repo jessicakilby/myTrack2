@@ -1,7 +1,7 @@
-﻿using myTrack.Controllers.Contracts;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using myTrack.Controllers.Contracts;
 using myTrack.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -9,13 +9,16 @@ using System.Web.Http;
 
 namespace myTrack.Controllers
 {
+    [Authorize]
     public class CategoryController : ApiController
     {
         readonly ICategoryRepository _categoryRepository;
+        private ApplicationDbContext _db;
 
-        public CategoryController(ICategoryRepository categoryRepository)
+        public CategoryController(ICategoryRepository categoryRepository, ApplicationDbContext db)
         {
             _categoryRepository = categoryRepository;
+            _db = db;
         }
 
         //Category GetSingleCategory(int CatId);
@@ -36,7 +39,7 @@ namespace myTrack.Controllers
         [Route("api/category")]
         public HttpResponseMessage GetAllCategories()
         {
-            var categories = _categoryRepository.GetAllCategories();
+            var categories = _categoryRepository.GetAllCategories(User.Identity.GetUserId());
 
             if (categories == null)
                 return Request.CreateErrorResponse(HttpStatusCode.NoContent, "No Categories here");
@@ -53,6 +56,8 @@ namespace myTrack.Controllers
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid Category name.");
             }
+
+            newCategory.User = _db.Users.Find(User.Identity.GetUserId());
 
             _categoryRepository.AddCategory(newCategory);
 
