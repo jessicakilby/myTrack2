@@ -14,6 +14,7 @@
                 NextDate: $scope.itemNextDate
 
             }).then(function (response) {
+                getFunction();
                 $scope.itemTitle = "";
                 $scope.itemStatus = "";
                 $scope.itemDescription = "";
@@ -24,9 +25,10 @@
             })
         };
 
-        $http.get(`api/item`).then(function (response) {
-            $scope.items = response.data;
-        });
-       
+        var getFunction = function () {
+            $http.get(`api/item/${$scope.SubcatId}`).then(function (response) {
+                $scope.items = response.data;
+            });
+        }
     }
 ]);

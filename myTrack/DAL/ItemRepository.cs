@@ -40,14 +40,11 @@ namespace myTrack.DAL.Repository
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Item> GetAllItems()
+        public IEnumerable<Item> GetAllItems(int SubcatId)
         {
-            return _context.Items;
+            var currentItem = _context.Subcategories.Include("Items").FirstOrDefault(x => x.SubcatId == SubcatId);
+            return currentItem?.Items;
         }
-
-        public Item GetSingleItem(int ItemId)
-        {
-            return _context.Items.Find(ItemId);
-        }
+        
     }
 }

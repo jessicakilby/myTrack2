@@ -9,9 +9,7 @@ namespace myTrack.Controllers.Contracts
 {
     public interface IItemRepository
     {
-        Item GetSingleItem(int ItemId);
-
-        IEnumerable<Item> GetAllItems();
+        IEnumerable<Item> GetAllItems(int SubcatId);
 
         void AddItem(int SubcatId, Item newItem);
 

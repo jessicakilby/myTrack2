@@ -9,14 +9,13 @@ namespace myTrack.Controllers.Contracts
 {
     public interface ISubcategoryRepository
     {
-        Subcategory GetSingleSubcategory(int SubcatId);
-
-        IEnumerable<Subcategory> GetAllSubcategories();
+        IEnumerable<Subcategory> GetAllSubcategories(int CatId);
 
         void AddSubcategory(int CatId, Subcategory newSubcategory);
 
         void EditSubcategory(Subcategory editSubcategory);
 
         void DeleteSubcategory(int deleteSubcatId);
+
     }
 }

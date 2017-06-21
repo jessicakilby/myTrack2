@@ -31,12 +31,7 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "app/Partials/Subcategory.html",
             controller: "SubcategoryController"
         });
-        //.when("/item/:id",
-        //{
-        //    templateUrl: "app/Partials/Item.html",
-        //    controller: "ItemController"
-        //});
-
+        
 }]);
 
 app.run(["$http", function ($http) {

@@ -1,6 +1,6 @@
 ﻿app.controller("CategoryController", ["$scope", "$http", "$location", "$routeParams",
     function ($scope, $http, $location, $routeParams) {
-
+        
         $scope.CatId = $routeParams.id;
 
         $scope.addSubcategory = function () {
@@ -11,6 +11,7 @@
                 Description: $scope.subcategoryDescription,
                 SubcatId: $scope.SubcatId
             }).then(function (response) {
+                getFunction();
                 $scope.subcategoryTitle = "";
                 $scope.subcategoryDescription = "";
                 $scope.SubcatId;
@@ -20,11 +21,22 @@
 
         };
 
-        $http.get(`api/subcategory`).then(function (response) {
-            $scope.subcategories = response.data;
-        });
+        $scope.deleteSubcategory = function () {
+            console.log("clicked delete subcategory button");
 
+            $http.delete(`api/subcategory`).then(function () {
+                getFunction();
+            });
+            
+        };
 
+        var getFunction = function () {
+            $http.get(`api/subcategory/${$scope.CatId}`).then(function (response) {
+                console.log(response.data);
+                $scope.subcategories = response.data;
+            });
+        };
 
+        getFunction();
     }
 ]);
