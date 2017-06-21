@@ -1,9 +1,19 @@
-﻿<h2>Main Categories</h2>
+﻿<h2></h2>
 <h4>Enter some main categores that you need reminders for like Home, Car, Pet, etc...</h4>
-<div class="card" ng-repeat="category in categories">
+<div class="card" >
     <div class="container">
         <a href="/#!/category/{{category.CatId}}"><div>{{category.Title}}</div></a>
     </div>
+</div>
+
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        Main Categories
+    </a>
+    <a href="/#!/category/{{category.CatId}}" class="list-group-item"  ng-repeat="category in categories">{{category.Title}}</a>
+    <!--<a href="#" class="list-group-item">Morbi leo risus</a>
+    <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+    <a href="#" class="list-group-item">Vestibulum at eros</a>-->
 </div>
 
 <form>
