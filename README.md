@@ -25,6 +25,8 @@ Shows individual reminders of things that are going to be coming up. It also is 
 
 ![Item](/img/Item.JPG?raw=true)
 
+## Styling
+I used the Darkly Bootswatch theme to add consistency between the pages.
 
 ## Contributors
 - [Jessica Kilby](https://github.com/jessicakilby)
