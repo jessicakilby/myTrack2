@@ -1,9 +1,12 @@
 ﻿<h2>Reminders</h2>
-<div class="card" ng-repeat="item in items">
-    <div class="container">
-            <div>{{item.Title}}: {{item.Description}}</div>
-            <div>Frequency: {{item.Frequency}}  ||  Next Date: {{item.NextDate}}</div>
-    </div>
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        Reminder Items:
+    </a>
+    <a href="#" class="list-group-item" ng-repeat="item in items">{{item.Title}} 
+        <div>Frequency: {{item.Frequency}}</div>
+        <div>Next Date: {{item.NextDate}}</div>
+    </a>
 </div>
 
 <form>

@@ -16,6 +16,7 @@
                 Description: $scope.categoryDescription,
                 CatId: $scope.CatId
             }).then(function (response) {
+                getFunction();
                 $scope.categoryTitle = "";
                 $scope.categoryDescription = "";
                 $scope.CatId;
@@ -25,9 +26,12 @@
 
         };
 
-        $http.get("api/category").then(function (response) {
-            $scope.categories = response.data;
-        });
+        var getFunction = function() {
+            $http.get("api/category").then(function (response) {
+                $scope.categories = response.data;
+            });
+        };
+        getFunction();
 
     }
 ]);

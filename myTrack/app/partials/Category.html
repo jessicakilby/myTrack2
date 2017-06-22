@@ -1,24 +1,21 @@
-﻿<h2>Subcategory Groups</h2>
-<h4>How can you break down the main category you chose into further topics? What are some general things you need help remembering?</h4>
-<div class="card" ng-repeat="subcategory in subcategories">
-    <div class="container">
-        <a href="/#!/subcategory/{{subcategory.SubcatId}}">
-            <h3>{{subcategory.Title}} </h3>
-            <h5>{{subcategory.Description}}</h5>
-        </a>
-    </div>
+﻿<h4>How can you break down the main category you chose into further topics? What are some general things you need help remembering?</h4>
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        Subcategory Groups
+    </a>
+    <a href="/#!/subcategory/{{subcategory.SubcatId}}" class="list-group-item" ng-repeat="subcategory in subcategories">
+        <span class="underline">{{subcategory.Title}}</span>
+        : &nbsp {{subcategory.Description}}
+    </a>
 </div>
 
-<form>
-    <ul class="form-style-1">
-        <li><label>New Subcategory Title <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Title" ng-model="subcategoryTitle" />&nbsp;</li>
-
-        <li>
-            <label>New Subcategory Description</label>
-            <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Description" ng-model="subcategoryDescription"></textarea>
-        </li>
-        <li>
-            <input type="button" class="btn-default" value="Add Subcategory" ng-click="addSubcategory()" />
-        </li>
-    </ul>
-</form>
+<div class="input-group">
+    <label for="basic-url">New Subcategory Title<span class="required">*</span></label>
+    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="subcategoryTitle">
+</div>
+<div class="input-group">
+    <label>New Subcategory Description</label>
+    <!--<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="subcategoryTitle">-->
+    <textarea class="form-control" rows="3" placeholder="Description" ng-model="subcategoryDescription"></textarea>
+</div>
+<input type="button" class="btn-default" value="Add Subcategory" ng-click="addSubcategory()" />
