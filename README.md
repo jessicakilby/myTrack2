@@ -8,7 +8,7 @@ Back end application that categorizes all the maintenance needs you may have. Th
 ### Home View
 Enter all your main categories such as, Home, Car, Pets, etc...
 
-![Home](/img/Home.jpg?raw=true)
+![Home](/img/Home.JPG?raw=true)
 
 
 ### Subcategory View
