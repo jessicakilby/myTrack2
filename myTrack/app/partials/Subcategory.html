@@ -3,34 +3,43 @@
     <a href="#" class="list-group-item active">
         Reminder Items:
     </a>
-    <a href="#" class="list-group-item" ng-repeat="item in items">{{item.Title}} 
-        <div>Frequency: {{item.Frequency}}</div>
-        <div>Next Date: {{item.NextDate}}</div>
+    <a href="#" class="list-group-item" ng-repeat="item in items">
+        <span class="underline">{{item.Title}}</span>
+        <div>Description:&nbsp &nbsp{{item.Description}}</div>
+        <div>Frequency:&nbsp &nbsp{{item.Frequency}}</div>
+        <div>Date Completed:&nbsp &nbsp{{item.NextDate}}</div>
     </a>
 </div>
 
-<form>
-    <ul class="form-style-1">
-        <li><label>New Item Title <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Title" ng-model="itemTitle" />&nbsp;</li>
+<!-- Input area  -->
+<div>
+    <h6>You can add a title and description. </h6>
+    <h6>You can also add the frequency or how often you need to do this item (monthly, quarterly, yearly, etc...). </h6>
+    <h6>Last you can add the date that you completed or will complete the task.</h6>
+    <h6>This information will be stored for your reference in the future.</h6>
 
-        <li>
-            <label>New Item Description</label>
-            <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Description" ng-model="itemDescription"></textarea>
-        </li>
-        <li>
-            <input type="text" name="field1" class="field-divided" placeholder="Status" ng-model="itemStatus" />&nbsp;
-            <input type="text" name="field2" class="field-divided" placeholder="Frequency" ng-model="itemFrequency" />
-        </li>
-        <li>
-            <input type="button" class="btn-default" value="Add Subcategory" ng-click="addItem()" />
-        </li>
-    </ul>
-</form>
+    <div class="input-group">
+        <label for="basic-url">New Item Title <span class="required">*</span></label>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="itemTitle">
+    </div>
 
-<!--<input type="text" placeholder="itemStatus" ng-model="itemStatus" />
-<input type="text" placeholder="itemDescription" ng-model="itemDescription" />
-<input type="text" placeholder="itemFrequency" ng-model="itemFrequency" />
-<input type="text" placeholder="itemNextDate" ng-model="itemNextDate" />
+    <div class="input-group">
+        <label>New Item Description</label>
+        <textarea class="form-control" rows="3" placeholder="Description" ng-model="itemDescription"></textarea>
+    </div>
 
-<input type="button" class="btn-default" value="addItem" ng-click="addItem()" />
-</div>-->
+    <div class="input-group">
+        <label for="basic-url">Frequency</label>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="itemFrequency">
+    </div>
+
+    <div class="input-group">
+        <label for="basic-url">Completion Date</label>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="itemNextDate">
+    </div>
+
+    <input type="button" class="btn-default" value="Add Item" ng-click="addItem()" />
+</div>
+       
+        
+
